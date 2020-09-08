@@ -1,0 +1,2 @@
+# AAD-GADS-2020-PROJECT
+Practice Project for 2020 GADS
