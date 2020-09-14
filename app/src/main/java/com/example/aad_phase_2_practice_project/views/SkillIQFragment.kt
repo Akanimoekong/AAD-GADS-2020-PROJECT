@@ -79,8 +79,7 @@ class SkillIQFragment : Fragment() {
                 tvIqScores!!.text = t.message
                 skillProgressBar.visibility = View.GONE
                 skill_iq_empty_text.visibility = View.VISIBLE
-                //imgIq.setImageResource(R.drawable) = t.message
-            }
+
         })
     }
 }
