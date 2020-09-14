@@ -61,25 +61,32 @@ class SkillIQFragment : Fragment() {
         skillProgressBar.visibility = View.VISIBLE
         skill_iq_empty_text.visibility = View.VISIBLE
 
-        call.enqueue(object : Callback<List<SkillIQLearnersResponse>> {
-            override fun onResponse(call: Call<List<SkillIQLearnersResponse>>, response: Response<List<SkillIQLearnersResponse>>) {
-                if (response.code() == 200) {
-                    val skillIq = response.body()!!
-                    skillProgressBar.visibility = View.GONE
-                    skill_iq_empty_text.visibility = View.GONE
-                    skillIQLeadersAdapter.addItems(response.body()!!)
+        call.run {
+
+            skillProgressBar.visibility = View.VISIBLE
+            skill_iq_empty_text.visibility = View.VISIBLE
+
+            enqueue(object : Callback<List<SkillIQLearnersResponse>> {
+                override fun onResponse(call: Call<List<SkillIQLearnersResponse>>, response: Response<List<SkillIQLearnersResponse>>) {
+                    if (response.code() == 200) {
+                        val skillIq = response.body()!!
+                        skillProgressBar.visibility = View.GONE
+                        skill_iq_empty_text.visibility = View.GONE
+                        skillIQLeadersAdapter.addItems(response.body()!!)
+
+                    }
 
                 }
 
+                override fun onFailure(call: Call<List<SkillIQLearnersResponse>>, t: Throwable) {
+                    tvIqName!!.text = t.message
+                    tvIqCountry!!.text = t.message
+                    tvIqScores!!.text = t.message
+                    skillProgressBar.visibility = View.GONE
+                    skill_iq_empty_text.visibility = View.VISIBLE
+
             }
-
-            override fun onFailure(call: Call<List<SkillIQLearnersResponse>>, t: Throwable) {
-                tvIqName!!.text = t.message
-                tvIqCountry!!.text = t.message
-                tvIqScores!!.text = t.message
-                skillProgressBar.visibility = View.GONE
-                skill_iq_empty_text.visibility = View.VISIBLE
-
         })
+        }
     }
 }
