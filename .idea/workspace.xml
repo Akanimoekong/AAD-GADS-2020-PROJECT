@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0616dc55-e67a-4bb9-a359-f56be37c9fe4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/aad_phase_2_practice_project/views/SkillIQFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/aad_phase_2_practice_project/views/SkillIQFragment.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
